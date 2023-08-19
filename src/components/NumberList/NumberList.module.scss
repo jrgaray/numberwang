@@ -1,0 +1,38 @@
+.numberList {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 16px;
+
+  .item {
+    width: 56px;
+    height: 56px;
+    background: grey;
+    border-radius: 8px;
+  }
+  .numberItem {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 32px;
+    background: grey;
+    transition: transform 0.2s ease-in-out;
+  }
+  .selected {
+    border: 1px solid var(--primary);
+    transform: translateY(-4px);
+  }
+  .firstSelected {
+    color: var(--primary-contrast);
+  }
+  .secondSelected {
+    color: var(--secondary-contrast);
+  }
+}
+
+.target {
+  display: flex;
+  justify-content: center;
+  font-size: clamp(64px, 10vw, 96px);
+}
