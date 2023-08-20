@@ -150,22 +150,21 @@ export const GameContextProvider: FC<GameContextProviderProps> = ({
   };
 
   const handleResetGame = () => {
-    handlePlayAgain();
-    // if (hasGameStarted && gameHistory.length > 0) {
-    //   setSelectedNumbers([null, null]);
-    //   setNumberList(
-    //     gameHistory[0].map((itemValue, index) => ({
-    //       value: itemValue as number,
-    //       selected: false,
-    //       index,
-    //     }))
-    //   );
-    //   setGameHistory([]);
-    // }
+    if (hasGameStarted && gameHistory.length > 0) {
+      setSelectedNumbers([null, null]);
+      setNumberList(
+        gameHistory[0].map((itemValue, index) => ({
+          value: itemValue as number,
+          selected: false,
+          index,
+        }))
+      );
+      setGameHistory([]);
+    }
   };
 
   const handleGoBack = () => {
-    if (hasGameStarted && gameHistory.length > 1) {
+    if (hasGameStarted && gameHistory.length > 0) {
       setSelectedNumbers([null, null]);
       setGameHistory((prev) => {
         const lastState = prev.pop();
