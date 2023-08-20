@@ -3,13 +3,7 @@ import styles from "./NumberList.module.scss";
 import { useGameContext } from "@/context";
 
 export const NumberList: FC = () => {
-  const {
-    numberList,
-    handleNumberSelect,
-    targetNumber,
-    hasWon,
-    handlePlayAgain,
-  } = useGameContext();
+  const { numberList, handleNumberSelect } = useGameContext();
   return (
     <>
       <div className={styles.numberList}>
@@ -31,19 +25,6 @@ export const NumberList: FC = () => {
           )
         )}
       </div>
-      {targetNumber && (
-        <div className={styles.target}>
-          <h2>{targetNumber}</h2>
-        </div>
-      )}
-      {hasWon && (
-        <>
-          <p>You won!</p>
-          <a href="#" onClick={handlePlayAgain}>
-            Play again?
-          </a>
-        </>
-      )}
     </>
   );
 };
